@@ -1,0 +1,20 @@
+@charset 'UTF-8';
+
+*{
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+  color: $col-font-gray;
+  &:focus{
+    outline: none;
+  }
+  &:hover{
+    color: $col-font-black;
+  }
+}
+
+.hidden{
+  display: none;
+}

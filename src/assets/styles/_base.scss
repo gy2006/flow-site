@@ -1,0 +1,43 @@
+@charset 'UTF-8';
+
+@import './variables/colors';
+@import './variables/form';
+@import './variables/presets';
+
+@import './components/navbar';
+@import './components/footer';
+@import './components/wrapper';
+
+html, body{
+  width: 100%;
+  // overflow-x: hidden;
+}
+
+body{
+  margin: 0;
+  color: $col-font-gray;
+  font-size: 16px;
+  font-family: 'Helvetica Neue', 'Open Sans', 'PingFang SC', Helvetica, sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-container{
+  padding: 40px;
+}
+.visiable-xs{
+  display: none;
+  @media (max-width: 480px) {
+    display: block;
+  }
+}
+
+.text-danger{
+  color: $col-red;
+}
+.text-success{
+  color: $col-green;
+}
+.text-primary{
+  color: $col-primary
+}

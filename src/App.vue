@@ -1,28 +1,42 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="page-home">
+    <header class="nav-header">
+      <a class="navbar-brand">
+        <i class="icon icon-logo"></i>
+      </a>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="/">首页</a>
+        </li>
+        <li class="nav-item">
+          <a href="">下载</a>
+        </li>
+        <li class="nav-item">
+          <a href="">文档</a>
+        </li>
+        <li class="nav-item">
+          <a href="">社区</a>
+        </li>
+        <li class="nav-item">
+          <a href="">博客</a>
+        </li>
+        <li>
+          <a class="btn btn-github" href="https://github.com/flowci">
+            <i class="icon icon-github"></i>Fork me on GitHub
+          </a>
+        </li>
+      </ul>
+    </header>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+  name: 'app'
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
