@@ -35,9 +35,10 @@
           <div>
             <h1 class="slogan">国内首套开源持续集成<br />(CI) 解决方案</h1>
             <ul class="list_slogan">
-              <li>简单安装，快速使用，跨平台</li>
-              <li>编译、测试、打包、发布全流程自动化</li>
-              <li>为 iOS 、Android 移动开发量身打造</li>
+              <li>开源免费</li>
+              <li>编译、测试、打包发布全流程自动化</li>
+              <li>全新打造的 UI/UE，简单易用</li>
+              <li>强大灵活的插件系统</li>
             </ul>
             <div>
               <button class='btn btn-guide'>快速入门</button>
