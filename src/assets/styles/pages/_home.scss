@@ -1,22 +1,20 @@
-.page-home{
+.page-home {
   text-align: center;
   line-height: 1.4;
   font-size: 16px;
   background-color: #F3F6F7;
   min-width: 960px;
+
   .container {
     width: 960px;
     margin: 0 auto;
   }
-  .desc{
+
+  .desc {
     color: #9191AA;
     margin: 0;
     margin-bottom: 80px;;
     line-height: 25px;
-  }
-
-  button+button{
-    margin-left: 10px;
   }
 
   .nav-header {
@@ -30,35 +28,42 @@
     align-items: center;
     justify-content: space-between;
   }
-  .navbar-brand{
+
+  .navbar-brand {
     font-size: 25px;
     color: #fff;
     cursor: pointer;
-    &:hover, &:focus{
+
+    &:hover, &:focus {
       color: #fff;
     }
   }
-  .navbar-nav{
+
+  .navbar-nav {
     font-size: 14px;
     list-style-type: none;
     display: inline-flex;
     align-items: center;
     margin: 0;
     padding: 0;
-    >li{
+
+    > li {
       margin-left: 30px;
-      >a{
+
+      > a {
         font-weight: 500;
         font-size: 14px;
       }
     }
   }
-  .nav-item{
-    >a{
+
+  .nav-item {
+    > a {
       position: relative;
       line-height: 40px;
       display: inline-block;
       color: #fff;
+
       &:after {
         content: ' ';
         position: absolute;
@@ -69,20 +74,26 @@
         display: inline-block;
         background-color: currentColor;
       }
+
       &:hover {
         &:after {
           width: 100%;
         }
       }
     }
+
     &.active {
-      >a {
+      > a {
         &:after {
           width: 100%;
         }
       }
     }
   }
+}
+
+.btn + .btn {
+  margin-left: 10px;
 }
 
 .btn-github {
@@ -93,19 +104,21 @@
   line-height: 40px;
   padding: 0 12px;
   border-radius: 20px;
-  box-shadow: 0 3px 10px 0 rgba(0,0,0,.15);
-  .icon{
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, .15);
+
+  .icon {
     font-size: 20px;
     margin-right: 10px;
   }
-  &:hover,&:focus{
+
+  &:hover, &:focus {
     background-color: darken(#fff, 5%);
     color: #715CD6;
   }
 }
 
 // 首屏
-.home-section{
+.home-section {
   background-image: url('../static/images/bgc.png');
   height: calc(100vh + 50px);
   max-height: 850px;
@@ -114,6 +127,7 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
   text-align: left;
+
   .container {
     height: 100%;
     display: flex;
@@ -121,14 +135,16 @@
     color: #fff;
   }
 }
-.slogan-group{
+
+.slogan-group {
   padding: 0 70px;
   margin-bottom: 50px;
   display: flex;
   align-items: flex-start;
   width: 100%;
 }
-.f-logo{
+
+.f-logo {
   width: 300px;
   height: 400px;
   display: inline-block;
@@ -136,20 +152,22 @@
   // background-color: #eee;
   margin-right: 60px;
 }
-.slogan{
-  width: 470px;
+
+.slogan {
+  width: 460px;
   font-size: 40px;
   padding: 15px 0;
   margin: 0;
 }
-.list_slogan{
+
+.list_slogan {
   line-height: 1.5;
   margin: 0 0 30px;
   padding: 0 0 0 20px;
   font-weight: 500;
 }
 
-%btn{
+%btn {
   width: 160px;
   font-size: 16px;
   height: 50px;
@@ -157,135 +175,171 @@
   border: 1px solid;
   border-radius: 3px;
 }
-.btn-guide{
+
+.btn-guide {
   @extend %btn;
   background-color: transparent;
   color: #fff;
-  // &:hover, &:focus{
-  //   background-color: #fff;
-  //   color: #715CD6;
-  // }
+  line-height: 48px;
+  display: inline-block;
+  vertical-align: baseline;
+  text-align: center;
+  font-weight: 700;
+
+  &:hover, &:focus {
+    background-color: #fff;
+    color: #715CD6;
+  }
 }
-// 首屏中的下载
-.btn-download{
+
+.btn-download {
   @extend %btn;
 
   background-color: #fff;
   color: #715CD6;
-  &:hover, &:focus{
+  line-height: 50px;
+  font-size: 16px;
+  height: 50px;
+  display: inline-block;
+  vertical-align: baseline;
+  text-align: center;
+  font-weight: 700;
+  border: none;
+
+  &:hover, &:focus {
     background-color: darken(#fff, 10%);
   }
 }
 
 // 下载
-.gradation-box{
+.gradation-box {
   position: relative;
   text-align: center;
   max-width: 900px;
   margin: 0 auto;
-  &:after, &:before{
+
+  &:after, &:before {
     content: ' ';
     position: absolute;
     display: block;
     width: 100%;
     height: 40px;
   }
-  &:before{
+
+  &:before {
     top: -40px;
     background-image: radial-gradient(50% 56% at 50% 43px, #e4e5e9, #f3f6f7);
   }
-  &:after{
+
+  &:after {
     bottom: -40px;
     background-image: radial-gradient(50% 56% at 50% -3px, #e4e5e9, #f3f6f7);
   }
 }
-.download-group{
+
+.download-group {
   padding: 50px 0 60px;
   margin-bottom: 40px + 40px;
-  h2{
+
+  h2 {
     color: #715CD6;
     font-size: 30px;
     margin-bottom: 10px;
   }
 }
-.download-version{
+
+.download-version {
   color: #8B8C9B;
   font-weight: 500;
   margin-bottom: 20px;
 }
-.download-actions{
-  >a{
+
+.download-actions {
+  > a {
     @extend %btn;
     background-color: #715CD6;
     color: #fff;
     border: none;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
     display: inline-flex;
     vertical-align: middle;
     align-items: center;
     justify-content: center;
-    .icon{
+
+    .icon {
       margin-right: 10px;
     }
-    .icon-github{
+
+    .icon-github {
       font-size: 18px;
     }
-    .icon-download{
+
+    .icon-download {
       font-size: 18px;
     }
-    &:hover, &:focus{
+
+    &:hover, &:focus {
       background-color: darken(#715CD6, 10%);
     }
   }
-  a+a{
+
+  a + a {
     margin-left: 10px;
   }
 }
+
 // 更新日志
-.changelog-group{
+.changelog-group {
   padding: 0 70px;
   margin-bottom: 100px;
   text-align: left;
-  h3{
+
+  h3 {
     color: #55575C;
     margin-bottom: 10px;
     font-weight: bold;
   }
-  small{
+
+  small {
     color: #715CD6;
     font-size: 12px;
     margin-left: 10px;
     font-weight: 500;
   }
 }
-.changelog-list{
+
+.changelog-list {
   color: #55575C;
   font-size: 18px;
   margin: 0px;
   padding-left: 20px;
   line-height: 25px;
 }
-.changelog-list-item{
+
+.changelog-list-item {
   color: #8B8C9B;
   font-size: 14px;
 }
 
 // footer
-.footer{
+.footer {
   padding: 10px 0 30px;
   margin: 0px 45px;
   font-size: 12px;
   line-height: 30px;
   border-top: 1px solid #D4DCE3;
 }
-.footer-container{
+
+.footer-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.licensed{
+
+.licensed {
   color: #715CD6;
-  &:hover,&:focus{
+
+  &:hover, &:focus {
     color: darken(#715CD6, 10%);
   }
 }
