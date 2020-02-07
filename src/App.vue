@@ -57,7 +57,7 @@
       <div class="gradation-box">
         <div id="download" class="download-group">
           <h2>{{ $t('download') }}</h2>
-          <div class="download-version">V1.0 Beta</div>
+          <div class="download-version">{{ latestChangeLog.versionAndDate }}</div>
           <div class="download-actions">
             <a href="https://github.com/flowci/docker" target="_blank">
               <i class="icon icon-download"></i>
@@ -71,27 +71,11 @@
         </div>
       </div>
       <div class="changelog-group">
-        <h3>本次更新<small>历史更新日志</small></h3>
+        <h3>{{ $t('changelog') }}</h3>
         <ul class="changelog-list">
-          <li>
+          <li v-for="item in latestChangeLog.changes" :key="item">
             <div class="changelog-list-item">
-              在创建项目阶段加入项目有效性检测，大大减少了构建失败率，有问题早发现！
-            </div>
-          </li>
-          <li>
-            <div class="changelog-list-item">
-              在创建项目阶段加入项目配置功能，比如 iOS 用户可以灵活切换构建需要使用的 Scheme !
-            </div>
-          </li>
-          <li>
-            <div class="changelog-list-item">
-              创建项目流程 UI & UE 整体提升，单页面一览无余!
-            </div>
-          </li>
-          <li>
-            <div class="changelog-list-item">
-              单元测试、产物找不到？试试新版的构建详情页!<br />
-              更多优化请在新版体验！
+              {{ item }}
             </div>
           </li>
         </ul>
@@ -116,6 +100,14 @@ import axios from 'axios'
 
 export default {
   name: 'app',
+  data () {
+    return {
+      latestChangeLog: {
+        versionAndData: '',
+        changes: []
+      }
+    }
+  },
   mounted () {
     axios.get('https://raw.githubusercontent.com/FlowCI/docs/master/CHANGELOG.md')
       .then((r) => {
@@ -123,8 +115,39 @@ export default {
           return
         }
 
-        console.log(r.data)
+        let logs = this.loadChangeLog(r.data)
+        this.latestChangeLog = logs[0]
       })
+  },
+  methods: {
+    loadChangeLog (data) {
+      let lines = data.split('\n')
+      let logs = []
+      let current
+
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trimLeft()
+
+        if (line.startsWith('-')) {
+          if (current !== undefined) {
+            logs.push(current)
+          }
+
+          current = {
+            versionAndDate: line.substring(1).trim(),
+            changes: []
+          }
+
+          continue
+        }
+
+        if (line.startsWith('*')) {
+          current.changes.push(line.substring(1).trim())
+        }
+      }
+
+      return logs
+    }
   }
 }
 </script>
