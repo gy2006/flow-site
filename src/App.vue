@@ -6,19 +6,16 @@
       </a>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a href="/">首页</a>
+          <a href="/">{{ $t('home') }}</a>
         </li>
         <li class="nav-item">
-          <a href="">下载</a>
+          <a href="">{{ $t('download') }}</a>
         </li>
         <li class="nav-item">
-          <a href="">文档</a>
+          <a href="https://github.com/FlowCI/docs">{{ $t('document') }}</a>
         </li>
         <li class="nav-item">
-          <a href="">社区</a>
-        </li>
-        <li class="nav-item">
-          <a href="">博客</a>
+          <a href="https://github.com/FlowCI/docs/issues">{{ $t('issue') }}</a>
         </li>
         <li>
           <a class="btn btn-github" href="https://github.com/flowci">
@@ -33,16 +30,16 @@
         <div class="slogan-group">
           <div class="f-logo"></div>
           <div>
-            <h1 class="slogan">国内首套开源持续集成<br />(CI) 解决方案</h1>
+            <h1 class="slogan">Continuous Integration <br/> (CI/CD) Platform</h1>
             <ul class="list_slogan">
-              <li>开源免费</li>
-              <li>编译、测试、打包发布全流程自动化</li>
-              <li>全新打造的 UI/UE，简单易用</li>
-              <li>强大灵活的插件系统</li>
+              <li>{{ $t('slogan.free') }}</li>
+              <li>{{ $t('slogan.simple') }}</li>
+              <li>{{ $t('slogan.scalable') }}</li>
+              <li>{{ $t('slogan.plugin') }}</li>
             </ul>
             <div>
-              <button class='btn btn-guide'>快速入门</button>
-              <button class='btn btn-download'>下载</button>
+              <button class='btn btn-guide'>{{ $t('start') }}</button>
+              <button class='btn btn-download'>{{ $t('download') }}</button>
             </div>
           </div>
         </div>
@@ -51,14 +48,13 @@
 
     <section class="container">
       <p class="desc">
-        flow.ci 使用 Java 语言编写，开源跨平台，<br />
-        flow.ci 安装包共有4个安装程序，运行 Install 脚本可一键安装。 <br />
-        你可以通过阅读安装帮助文档进行安装配置，<br />
-        安装使用过程中的任何问题你可以在社区与我们取得联系。
+        {{ $t('desc.1') }}<br />
+        {{ $t('desc.2') }}<br />
+        {{ $t('desc.3') }}<br />
       </p>
       <div class="gradation-box">
         <div class="download-group">
-          <h2>下载</h2>
+          <h2>{{ $t('download') }}</h2>
           <div class="download-version">V1.0 Beta</div>
           <div class="download-actions">
             <a>
