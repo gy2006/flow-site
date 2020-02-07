@@ -116,7 +116,7 @@ export default {
         }
 
         let logs = this.loadChangeLog(r.data)
-        this.latestChangeLog = logs[0]
+        this.latestChangeLog = logs[1]
       })
   },
   methods: {

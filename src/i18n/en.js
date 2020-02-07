@@ -4,7 +4,7 @@ export default {
   document: 'Document',
   issue: 'Issue',
   start: 'Get Started',
-  changelog: 'Change Log',
+  changelog: 'Latest Change Log',
   slogan: {
     free: 'Free Open Source',
     simple: 'Simple YAML Configuration',
