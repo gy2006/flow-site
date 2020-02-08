@@ -12,8 +12,7 @@ export default {
     plugin: 'Plugins to support any language & platform'
   },
   desc: {
-    1: 'Written in Java & Golang',
-    2: 'Install by Docker with 5 minutes',
-    3: 'Submit issue if there were bugs or any problems, improvements'
+    1: 'Install by Docker with 5 minutes',
+    2: 'Submit issue if there were bugs or any problems, improvements'
   }
 }
