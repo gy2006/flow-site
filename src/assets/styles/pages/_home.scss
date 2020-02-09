@@ -101,11 +101,14 @@
   }
 
   .dropdown {
+    position: relative;
   }
 
   .dropdown:hover .ci-dropdown {display: block;}
 
   .ci-dropdown {
+    right: 0;
+    left: auto;
     box-sizing: border-box;
     margin: 0;
     padding: 0;

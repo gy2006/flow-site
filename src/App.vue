@@ -130,10 +130,7 @@ export default {
   data () {
     return {
       lang: 'en',
-      latestChangeLog: {
-        versionAndData: '',
-        changes: []
-      }
+      logs: []
     }
   },
   mounted () {
@@ -143,13 +140,29 @@ export default {
           return
         }
 
-        let logs = this.loadChangeLog(r.data)
-        this.latestChangeLog = logs[1]
+        this.logs = this.loadChangeLog(r.data)
       })
+  },
+  computed: {
+    latestChangeLog () {
+      if (this.logs.length < 2) {
+        return {
+          versionAndData: '',
+          changes: []
+        }
+      }
+
+      if (this.lang === 'en') {
+        return this.logs[1]
+      }
+
+      return this.logs[0]
+    }
   },
   methods: {
     onLangClick (val) {
       this.lang = val
+      this.$i18n.locale = this.lang
     },
 
     loadChangeLog (data) {
