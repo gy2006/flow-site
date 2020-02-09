@@ -18,8 +18,32 @@
           <a href="https://github.com/FlowCI/docs/issues" target="_blank">{{ $t('issue') }}</a>
         </li>
         <li class="nav-item">
-          <svg width="20" height="20" viewBox="0 0 24 24" class="lang-icon">
-            <path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>
+          <div class="dropdown">
+            <svg width="20" height="20" viewBox="0 0 24 24" class="lang-icon">
+              <path
+                d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path>
+            </svg>
+            <div class="ci-dropdown">
+              <ul class="ci-dropdown-menu">
+                <li :class="['ci-dropdown-menu-item', lang === 'en' ? 'ci-dropdown-menu-item-selected' : '']" role="menuitem" @click="onLangClick('en')">
+                  <i aria-label="icon: check" class="ciicon" style="visibility: visible; color: rgb(82, 196, 26);">
+                    <svg viewBox="64 64 896 896" focusable="false" :class="[lang === 'en' ? 'ciiconvisable' : 'ciiconhide']" data-icon="check" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                      <path d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"></path>
+                    </svg>
+                  </i>
+                  English
+                </li>
+                <li :class="['ci-dropdown-menu-item', lang === 'cn' ? 'ci-dropdown-menu-item-selected' : '']" role="menuitem" @click="onLangClick('cn')">
+                  <i aria-label="icon: check" class="ciicon" style="visibility: hidden; color: rgb(82, 196, 26);">
+                    <svg viewBox="64 64 896 896" focusable="false" :class="[lang === 'cn' ? 'ciiconvisable' : 'ciiconhide']" data-icon="check" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                      <path d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"></path>
+                    </svg>
+                  </i>
+                  简体中文
+                </li>
+              </ul>
+            </div>
+          </div>
         </li>
         <li>
           <a class="btn btn-github" href="https://github.com/flowci">
@@ -54,8 +78,8 @@
 
     <section class="container">
       <p class="desc">
-        {{ $t('desc.1') }}<br />
-        {{ $t('desc.2') }}<br />
+        {{ $t('desc.1') }}<br/>
+        {{ $t('desc.2') }}<br/>
       </p>
       <div class="gradation-box">
         <div id="download" class="download-group">
@@ -84,31 +108,6 @@
         </ul>
       </div>
     </section>
-
-    <div style="position: absolute; top: 0px; left: 0px; width: 100%;">
-      <div>
-        <div class="ci-dropdown  ci-dropdown-placement-bottomRight  ci-dropdown-hidden" style="left: 1502px;top: 48px;">
-          <ul class="ci-dropdown-menu ci-dropdown-menu-light ci-dropdown-menu-root ci-dropdown-menu-vertical" role="menu" tabindex="0">
-            <li :class="['ci-dropdown-menu-item', lang === 'en' ? 'ci-dropdown-menu-item-selected' : '']" role="menuitem" @click="onLangClick('en')">
-              <i aria-label="icon: check" class="ciicon" style="visibility: visible; color: rgb(82, 196, 26);">
-                <svg viewBox="64 64 896 896" focusable="false" :class="[lang === 'en' ? 'ciiconvisable' : 'ciiconhide']" data-icon="check" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                  <path d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"></path>
-                </svg>
-              </i>
-              English
-            </li>
-            <li :class="['ci-dropdown-menu-item', lang === 'cn' ? 'ci-dropdown-menu-item-selected' : '']" role="menuitem" @click="onLangClick('cn')">
-              <i aria-label="icon: check" class="ciicon" style="visibility: hidden; color: rgb(82, 196, 26);">
-                <svg viewBox="64 64 896 896" focusable="false" :class="[lang === 'cn' ? 'ciiconvisable' : 'ciiconhide']" data-icon="check" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                  <path d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"></path>
-                </svg>
-              </i>
-              简体中文
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
 
     <footer class="footer">
       <div class="footer-container">
