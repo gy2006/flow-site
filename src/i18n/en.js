@@ -5,10 +5,12 @@ export default {
   issue: 'Issue',
   start: 'Get Started',
   changelog: 'Latest Change Log',
+  title: 'Powerful and user-friendly',
+  platform: 'platform',
   slogan: {
     free: 'Free Open Source',
     simple: 'Simple YAML Configuration',
-    scalable: 'Scalable agents to speed up your build',
+    scalable: 'Support parallel build, scalable agent and job cache  to speed up your build',
     plugin: 'Plugins to support any language & platform'
   },
   desc: {

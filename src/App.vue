@@ -58,7 +58,7 @@
         <div class="slogan-group">
           <div class="f-logo"></div>
           <div>
-            <h1 class="slogan">Continuous Integration <br/> (CI/CD) Platform</h1>
+            <h1 class="slogan">{{ $t('title') }} <br/> (CI/CD) {{ $t('platform') }}</h1>
             <ul class="list_slogan">
               <li>{{ $t('slogan.free') }}</li>
               <li>{{ $t('slogan.simple') }}</li>
