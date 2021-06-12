@@ -60,14 +60,16 @@
           <div>
             <h1 class="slogan">{{ $t('title') }} <br/> (CI/CD) {{ $t('platform') }}</h1>
             <ul class="list_slogan">
-              <li>{{ $t('slogan.free') }}</li>
-              <li>{{ $t('slogan.simple') }}</li>
-              <li>{{ $t('slogan.scalable') }}</li>
-              <li>{{ $t('slogan.plugin') }}</li>
+              <li><h3>{{ $t('slogan.free') }}</h3></li>
+              <li><h3>{{ $t('slogan.simple') }}</h3></li>
+              <li><h3>{{ $t('slogan.scalable') }}</h3></li>
+              <li><h3>{{ $t('slogan.parallel') }}</h3></li>
+              <li><h3>{{ $t('slogan.ha') }}</h3></li>
+              <li><h3>{{ $t('slogan.plugin') }}</h3></li>
             </ul>
             <div>
               <a class='btn btn-guide'
-                 href="https://github.com/FlowCI/docs/blob/master/v1.0/start/index.md"
+                 :href="`https://github.com/FlowCI/docs/blob/master/${lang}/start/index.md`"
                  target="_blank">{{ $t('start') }}</a>
               <a class='btn btn-download' href="#download">{{ $t('download') }}</a>
             </div>
