@@ -25,18 +25,26 @@
             </svg>
             <div class="ci-dropdown">
               <ul class="ci-dropdown-menu">
-                <li :class="['ci-dropdown-menu-item', lang === 'en' ? 'ci-dropdown-menu-item-selected' : '']" role="menuitem" @click="onLangClick('en')">
+                <li :class="['ci-dropdown-menu-item', lang === 'en' ? 'ci-dropdown-menu-item-selected' : '']"
+                    role="menuitem" @click="onLangClick('en')">
                   <i aria-label="icon: check" class="ciicon" style="visibility: visible; color: rgb(82, 196, 26);">
-                    <svg viewBox="64 64 896 896" focusable="false" :class="[lang === 'en' ? 'ciiconvisable' : 'ciiconhide']" data-icon="check" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                      <path d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"></path>
+                    <svg viewBox="64 64 896 896" focusable="false"
+                         :class="[lang === 'en' ? 'ciiconvisable' : 'ciiconhide']" data-icon="check" width="1em"
+                         height="1em" fill="currentColor" aria-hidden="true">
+                      <path
+                        d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"></path>
                     </svg>
                   </i>
                   English
                 </li>
-                <li :class="['ci-dropdown-menu-item', lang === 'cn' ? 'ci-dropdown-menu-item-selected' : '']" role="menuitem" @click="onLangClick('cn')">
+                <li :class="['ci-dropdown-menu-item', lang === 'cn' ? 'ci-dropdown-menu-item-selected' : '']"
+                    role="menuitem" @click="onLangClick('cn')">
                   <i aria-label="icon: check" class="ciicon" style="visibility: hidden; color: rgb(82, 196, 26);">
-                    <svg viewBox="64 64 896 896" focusable="false" :class="[lang === 'cn' ? 'ciiconvisable' : 'ciiconhide']" data-icon="check" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                      <path d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"></path>
+                    <svg viewBox="64 64 896 896" focusable="false"
+                         :class="[lang === 'cn' ? 'ciiconvisable' : 'ciiconhide']" data-icon="check" width="1em"
+                         height="1em" fill="currentColor" aria-hidden="true">
+                      <path
+                        d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"></path>
                     </svg>
                   </i>
                   简体中文
@@ -58,7 +66,7 @@
         <div class="slogan-group">
           <div class="f-logo"></div>
           <div>
-            <h1 class="slogan">{{ $t('title') }} <br/> (CI/CD) {{ $t('platform') }}</h1>
+            <h1 class="slogan">{{ $t('title') }} <br/> CI/CD {{ $t('platform') }}</h1>
             <ul class="list_slogan">
               <li><h3>{{ $t('slogan.free') }}</h3></li>
               <li><h3>{{ $t('slogan.simple') }}</h3></li>
@@ -83,6 +91,34 @@
         {{ $t('desc.1') }}<br/>
         {{ $t('desc.2') }}<br/>
       </p>
+
+      <carousel :navigationEnabled="false" :perPage="1" :autoplay="true">
+        <slide>
+          <img :src=imgJobList style="width: 100%;">
+          <p class="desc-img">Job List</p>
+        </slide>
+        <slide>
+          <img :src=imgYmlConfig style="width: 100%;">
+          <p class="desc-img">YAML Config</p>
+        </slide>
+        <slide>
+          <img :src=imgJobAgent style="width: 100%;">
+          <p class="desc-img">Job Detail</p>
+        </slide>
+        <slide>
+          <img :src=imgOnlineDebug style="width: 100%;">
+          <p class="desc-img">Online Debugging</p>
+        </slide>
+        <slide>
+          <img :src=imgCoverageReport style="width: 100%;">
+          <p class="desc-img">Coverage Report</p>
+        </slide>
+        <slide>
+          <img :src=imgStatistic style="width: 100%;">
+          <p class="desc-img">Statistic</p>
+        </slide>
+      </carousel>
+
       <div class="gradation-box">
         <div id="download" class="download-group">
           <h2>{{ $t('download') }}</h2>
@@ -126,13 +162,26 @@
 
 <script>
 import axios from 'axios'
+import { Carousel, Slide } from 'vue-carousel'
+import imgJobList from './assets/static/images/flowci_job_list.png'
+import imgCoverageReport from './assets/static/images/flowci_coverage_report.png'
+import imgJobAgent from './assets/static/images/flowci_job_agent.png'
+import imgOnlineDebug from './assets/static/images/flowci_online_debug.png'
+import imgYmlConfig from './assets/static/images/flowci_yml_config.png'
+import imgStatistic from './assets/static/images/flowci_statistic.png'
 
 export default {
   name: 'app',
   data () {
     return {
       lang: 'en',
-      logs: []
+      logs: [],
+      imgJobList,
+      imgCoverageReport,
+      imgOnlineDebug,
+      imgJobAgent,
+      imgYmlConfig,
+      imgStatistic
     }
   },
   mounted () {
@@ -144,6 +193,10 @@ export default {
 
         this.logs = this.loadChangeLog(r.data)
       })
+  },
+  components: {
+    Carousel,
+    Slide
   },
   computed: {
     latestChangeLog () {

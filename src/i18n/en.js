@@ -5,8 +5,8 @@ export default {
   issue: 'Issue',
   start: 'Get Started',
   changelog: 'Latest Change Log',
-  title: 'Powerful and User-Friendly',
-  platform: 'platform',
+  title: 'A Simple and Powerful',
+  platform: 'Server',
   slogan: {
     free: 'Free Open Source',
     simple: 'Simple YAML Configuration',

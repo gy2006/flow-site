@@ -13,7 +13,14 @@
   .desc {
     color: #9191AA;
     margin: 0;
-    margin-bottom: 80px;;
+    margin-bottom: 80px;
+    line-height: 25px;
+    font-weight: bold;
+  }
+
+  .desc-img {
+    color: #9191AA;
+    margin: 0;
     line-height: 25px;
     font-weight: bold;
   }
@@ -307,7 +314,6 @@
 
   &:after, &:before {
     content: ' ';
-    position: absolute;
     display: block;
     width: 100%;
     height: 40px;
