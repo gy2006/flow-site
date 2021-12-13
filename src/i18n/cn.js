@@ -1,12 +1,13 @@
 export default {
   home: '首页',
-  download: '下载',
+  learn_more: '了解更多',
   document: '文档',
   issue: 'Issue',
   start: '快速开始',
   changelog: '更新日志',
   title: '国内首套开源持续集成',
   platform: '解决方案',
+  version: '最新版本',
   slogan: {
     free: '免费开源',
     simple: '简单的 YAML 配置',

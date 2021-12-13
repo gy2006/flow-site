@@ -1,12 +1,13 @@
 export default {
   home: 'Home',
-  download: 'Download',
+  learn_more: 'Lean More',
   document: 'Document',
   issue: 'Issue',
   start: 'Get Started',
-  changelog: 'Latest Change Log',
+  changelog: 'Change Logs',
   title: 'A Simple and Powerful',
   platform: 'Server',
+  version: 'Latest Version',
   slogan: {
     free: 'Free Open Source',
     simple: 'Simple YAML Configuration',

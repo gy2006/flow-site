@@ -9,9 +9,6 @@
           <a href="/">{{ $t('home') }}</a>
         </li>
         <li class="nav-item">
-          <a href="#download">{{ $t('download') }}</a>
-        </li>
-        <li class="nav-item">
           <a href="https://github.com/FlowCI/docs" target="_blank">{{ $t('document') }}</a>
         </li>
         <li class="nav-item">
@@ -75,11 +72,24 @@
               <li><h3>{{ $t('slogan.ha') }}</h3></li>
               <li><h3>{{ $t('slogan.plugin') }}</h3></li>
             </ul>
-            <div>
+
+            <div style="text-align: center">
               <a class='btn btn-guide'
-                 :href="`https://github.com/FlowCI/docs/blob/master/${lang}/start/index.md`"
-                 target="_blank">{{ $t('start') }}</a>
-              <a class='btn btn-download' href="#download">{{ $t('download') }}</a>
+                 href="https://github.com/FlowCI/docker"
+                 target="_blank"
+              >{{ $t('start') }}</a>
+
+              <a class='btn btn-guide'
+                 href="https://github.com/FlowCI/doc"
+                 target="_blank"
+              >{{ $t('learn_more') }}</a>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px">
+              <a href="https://github.com/flowci" target="_blank">
+                <img alt="GitHub Org's stars" style="min-width: 130px"
+                     src="https://img.shields.io/github/stars/flowci?style=social">
+              </a>
             </div>
           </div>
         </div>
@@ -120,23 +130,13 @@
       </carousel>
 
       <div class="gradation-box">
-        <div id="download" class="download-group">
-          <h2>{{ $t('download') }}</h2>
-          <div class="download-version">{{ latestChangeLog.versionAndDate }}</div>
-          <div class="download-actions">
-            <a href="https://github.com/flowci/docker" target="_blank">
-              <i class="icon icon-download"></i>
-              Docker
-            </a>
-            <a href="https://github.com/flowci">
-              <i class="icon icon-github"></i>
-              Source Code
-            </a>
-          </div>
-        </div>
+        <h1 style="margin-top: 20px">{{ $t('version') }}</h1>
+        <h2 class="download-version">{{ latestChangeLog.versionAndDate }}</h2>
       </div>
+
       <div class="changelog-group">
-        <h3>{{ $t('changelog') }}</h3>
+        <h3 style="margin-top: 20px">{{ $t('changelog') }}</h3>
+
         <ul class="changelog-list">
           <li v-for="item in latestChangeLog.changes" :key="item">
             <div class="changelog-list-item">
@@ -172,6 +172,10 @@ import imgStatistic from './assets/static/images/flowci_statistic.png'
 
 export default {
   name: 'app',
+  components: {
+    Carousel,
+    Slide
+  },
   data () {
     return {
       lang: 'en',
@@ -193,10 +197,6 @@ export default {
 
         this.logs = this.loadChangeLog(r.data)
       })
-  },
-  components: {
-    Carousel,
-    Slide
   },
   computed: {
     latestChangeLog () {
